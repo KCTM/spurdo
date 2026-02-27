@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spurdo</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+
+  <!-- Inter font (same family used on original page) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #0b0b0b;
+      height: 100vh;
+      overflow: hidden; /* prevent scrolling */
+    }
+
+    /* HEADER */
+    header {
+      height: 80px;
+      padding: 0 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ededed;
+    }
+
+    header img {
+      height: 204px; /* enlarged logo */
+    }
+
+    .lang {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .lang a {
+      text-decoration: none;
+      color: #111;
+      opacity: 0.6;
+      transition: opacity .2s ease;
+    }
+
+    .lang a.active,
+    .lang a:hover {
+      opacity: 1;
+    }
+
+    /* MAIN LAYOUT */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 72px 72px;
+      gap: 64px;
+      height: calc(100vh - 80px); /* fit exactly in viewport */
+    }
+
+    .left {
+      max-width: 620px;
+    }
+
+    h1 {
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.65;
+      color: #5a5a5a;
+      margin-bottom: 44px;
+      max-width: 520px;
+    }
+
+    /* CTA CARD */
+    .card {
+      background: #fff3ec;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 420px;
+      margin-bottom: 56px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      background: #f47b44;
+      color: #fff;
+      border: none;
+      padding: 14px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      gap: 72px;
+    }
+
+    .stat h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .stat p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-wrapper {
+      background: linear-gradient(180deg, #ffffff 0%, #ffd7c2 100%);
+      border-radius: 36px;
+      padding: 48px 56px 0 56px;
+    }
+
+    .hero-wrapper img {
+      height: 560px;
+      display: block;
+    }
+
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="spurdo.png" alt="Spurdo logo">
+    <nav class="lang">
+      <a href="#" data-lang="ru">RU</a>
+      <a href="#" data-lang="ua">UA</a>
+      <a href="#" data-lang="en" class="active">EN</a>
+      <a href="#" data-lang="cn">CN</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <h1>The right way to make<br>the game better</h1>
+      <p class="description">
+        We provide safe and stable software focused on quality, convenience, and stealth, so you can play confidently and comfortably.
+      </p>
+
+      <div class="card">
+        <h3>Join us today!</h3>
+        <p>Download it today and start playing in just a few clicks.</p>
+        <a href="https://modsfire.com/Ob4B9y331yP7iXg" class="btn">Download</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h4>✓ Focus on what matters</h4>
+          <p>We create the safest product possible, always protecting your account from bans!</p>
+        </div>
+        <div class="stat">
+          <h4>♡ Trusted by many</h4>
+          <p>&gt; 8,000 users<br>&gt; 12 influencers</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="hero-wrapper">
+        <img src="hero.png" alt="Hero character">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        title: "The right way to make the game better",
+        desc: "We provide safe and stable software focused on quality, convenience, and stealth, so you can play confidently and comfortably.",
+        join: "Join us today!",
+        joinDesc: "Download it today and start playing in just a few clicks.",
+        focus: "✓ Focus on what matters",
+        focusDesc: "We create the safest product possible, always protecting your account from bans!",
+        trusted: "♡ Trusted by many"
+      },
+      es: {
+        title: "La forma correcta de mejorar el juego",
+        desc: "Ofrecemos software seguro y estable enfocado en calidad, comodidad y discreción.",
+        join: "¡Únete hoy!",
+        joinDesc: "Descárgalo hoy y empieza en solo unos clics.",
+        focus: "✓ Enfócate en lo importante",
+        focusDesc: "Creamos el producto más seguro posible, protegiendo siempre tu cuenta.",
+        trusted: "♡ Confiado por muchos"
+      }
+    };
+
+    const titleEl = document.querySelector('h1');
+    const descEl = document.querySelector('.description');
+    const joinEl = document.querySelector('.card h3');
+    const joinDescEl = document.querySelector('.card p');
+    const focusEl = document.querySelector('.stat:first-child h4');
+    const focusDescEl = document.querySelector('.stat:first-child p');
+    const trustedEl = document.querySelector('.stat:last-child h4');
+
+    document.querySelectorAll('.lang a').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('.lang a').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const lang = btn.dataset.lang;
+        if (!translations[lang]) return;
+        titleEl.innerHTML = translations[lang].title.replace('game better','<br>the game better');
+        descEl.textContent = translations[lang].desc;
+        joinEl.textContent = translations[lang].join;
+        joinDescEl.textContent = translations[lang].joinDesc;
+        focusEl.textContent = translations[lang].focus;
+        focusDescEl.textContent = translations[lang].focusDesc;
+        trustedEl.textContent = translations[lang].trusted;
+      });
+    });
+  </script>
+</body>
+</html>
